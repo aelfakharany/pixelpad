@@ -1,0 +1,15 @@
+#grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 256px;
+    padding: 0px;
+}
+
+.grid-item {
+    margin: 0px;
+    padding: 0px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+}
