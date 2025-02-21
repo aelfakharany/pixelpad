@@ -22,3 +22,28 @@ for (let i = 0; i < (16*16); i++) {
         }
     })
 }
+
+function getNewSize() {
+    let newSize;
+    while (true) {
+        const input = prompt("Enter new grid dimension (1 to 100)");
+        if (input === null) {
+            // User cancelled the prompt
+            return null;
+        }
+        newSize = parseInt(input, 10);
+        if (newSize >= 1 && newSize <= 100) {
+            break;
+        } else {
+            alert("Grid dimension must be between 1 and 100, inclusive");
+        }
+    }
+    return newSize;
+}
+
+function newGrid() {
+    size  = getNewSize();
+    
+}
+
+document.getElementById("sizeButton").addEventListener("click", newGrid);
