@@ -43,7 +43,22 @@ function getNewSize() {
 
 function newGrid() {
     size  = getNewSize();
-    
+    gridContainer.innerHTML = '';
+    for (let i = 0; i < (size * size); i++) {
+        const div = document.createElement("div");
+        div.classList.add("grid-item");
+        div.style.width = `${50 / size}vh`;
+        div.style.height = `${50 / size}vh`;
+        gridContainer.appendChild(div);
+        div.addEventListener("click", () => {
+            div.style.backgroundColor = "black";
+        })
+        div.addEventListener("mouseover", () => {
+            if (isMouseDown) {
+                div.style.backgroundColor = "black";
+            }
+        })
+    }
 }
 
 document.getElementById("sizeButton").addEventListener("click", newGrid);
