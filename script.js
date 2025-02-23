@@ -43,12 +43,15 @@ function getNewSize() {
 
 function newGrid() {
     size  = getNewSize();
+    if (size == null) {
+        return size;
+    }
     gridContainer.innerHTML = '';
     for (let i = 0; i < (size * size); i++) {
         const div = document.createElement("div");
         div.classList.add("grid-item");
-        div.style.width = `${50 / size}vh`;
-        div.style.height = `${50 / size}vh`;
+        div.style.width = `${50 / size}vw`;
+        div.style.height = `${50 / size}vw`;
         gridContainer.appendChild(div);
         div.addEventListener("click", () => {
             div.style.backgroundColor = "black";
@@ -61,4 +64,4 @@ function newGrid() {
     }
 }
 
-document.getElementById("sizeButton").addEventListener("click", newGrid);
+document.getElementById("size-button").addEventListener("click", newGrid);
